@@ -1,0 +1,330 @@
+
+/*Monserrat font*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+$Montserrat: 'Montserrat', sans-serif;
+
+/*Futura Light font*/
+@font-face 
+{
+    font-family: Futura Light;
+    src: url("../fonts/Futura Light Regular.otf") format("opentype");
+}
+
+/*======================================================================================*/
+/*common setup*/
+
+$bg_color: black;
+$text_color: white;
+$hover_color: #50FAA8;
+
+html 
+{
+	// scroll-snap-type: mandatory;
+    // scroll-snap-points-y: repeat(100vh);
+    // scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; //mobile scrolling effect
+}
+
+body 
+{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+.overlay 
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    z-index: 8;
+    background: black;
+}
+
+.first 
+{
+    top: 0;
+}
+
+.second 
+{
+    top: 33.3%
+}
+
+.third 
+{
+    top: 66.6%;
+}
+
+/*======================================================================================*/
+/*header*/
+
+.navbar
+{
+    width: 100%;
+    height: 15vh;
+    z-index: 1;
+    //background: transparent;
+    background: black;
+    justify-content: space-between;
+
+    .team_name
+    {
+        display: flex;
+        justify-content: left;
+        
+        .logo
+        {
+            //background: red;
+            margin-right: 1vw;
+            height: auto;
+            width: auto;
+            max-width: 10vw;
+            max-height: 11vh;
+        }
+
+        .team_name_word
+        {
+            margin-top: 1.7vh;
+            line-height: 0.40;
+
+            .name
+            {
+                font-size: 3.5vw;
+                color: white;
+                font-family: $Montserrat;
+                border: none;
+                background-color: Transparent;
+
+                &:hover
+                {
+                    color: $hover_color;
+                }
+            }
+
+            .subname
+            {
+                font-size: 1.2vw;
+                color: white;
+                font-family: Futura Light;
+                font-weight: lighter;
+                margin-left: 0.15vw;
+                border: none;
+                background-color: Transparent;
+
+                &:hover
+                {
+                    color: $hover_color;
+                }
+            }
+        }
+    }
+}
+
+/*======================================================================================*/
+/*sidebar*/
+
+.menu-btn
+{
+    z-index: 7;
+    position: fixed;
+    top: 7vh;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger 
+{
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after 
+{
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before 
+{
+  transform: translateY(-16px);
+}
+
+.menu-btn__burger::after 
+{
+  transform: translateY(16px);
+}
+
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger 
+{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before 
+{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after 
+{
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.sidebar
+{
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    right: 0;
+    z-index: 3;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.98);
+    border-left: 1px solid white;
+    
+    .closebtn
+    {
+        color: white;
+        font-family: $Montserrat;
+        font-size: 50px;
+        right: 0;
+        position:absolute;
+        margin-right: 2vw;
+        margin-top: 1.8vw;
+
+        &:hover
+        {
+            color: $hover_color;
+            text-decoration: none;
+        }
+    }
+
+    .option_menu
+    {
+        text-align: right;
+        margin-top: 20vh;
+        margin-right: 2vw;
+
+        li 
+        {
+            color: white;
+            font-size: 2.8vw;
+            display: flex;
+            line-height: 2;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+
+        a
+        {
+            color:white;
+
+            &:hover
+            {
+                color:$hover_color;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*======================================================================================*/
+/*body*/
+
+section 
+{
+    min-height: 100vh;
+    height: 100%;
+    max-width: 100%;
+	// scroll-snap-align: start;
+	text-align: center;
+    position: relative;
+    background: #E8E8E8;
+}
+
+/*======================================================================================*/
+/*Content*/
+
+.content
+{
+    padding-top: 17vh;
+    padding-bottom:4vh;
+    display:flex;
+    justify-content:center;
+    font-family: $Montserrat;
+
+    .container_box
+    {
+        background: #E8E8E8;
+        width: 50%;
+        height: auto;
+        border-left: 5px solid black;
+        color: black;
+        padding:0% 2% 0% 2%;
+        text-align: left;
+
+        h1
+        {
+            letter-spacing: 5px;
+        }
+
+        h2
+        {
+            letter-spacing: 3px;
+            text-decoration: underline;
+        }
+        
+        h3
+        {
+            letter-spacing: 1px;
+        }
+
+        table
+        {
+            border-collapse: collapse;
+        }
+
+        .value
+        {
+            padding-left: 1vw;
+        }
+
+        .value:before
+        {
+            content: ": ";
+        }
+
+        .agenda_title
+        {
+            //background: red;
+            height: auto;
+            width: 100%;
+            border-left: 5px solid #59647a;
+            padding-left: 5px;
+            font-weight: bold;
+        }
+
+        p
+        {
+            text-align: justify;
+        }
+    }
+}

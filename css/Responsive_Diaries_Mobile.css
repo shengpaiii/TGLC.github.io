@@ -1,0 +1,269 @@
+/*Monserrat font*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+/*Futura Light font*/
+@font-face {
+  font-family: Futura Light;
+  src: url("../fonts/Futura Light Regular.otf") format("opentype");
+}
+
+/*======================================================================================*/
+/*common setup*/
+@media (max-width: 575.98px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  html, body {
+    overflow-x: hidden !important;
+  }
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    z-index: 8;
+    background: black;
+  }
+  .first {
+    top: 0;
+  }
+  .second {
+    top: 33.3%;
+  }
+  .third {
+    top: 66.6%;
+  }
+  /*======================================================================================*/
+  /*header*/
+  .navbar {
+    width: 100%;
+    height: 11vh;
+    z-index: 2;
+    background: black;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar .team_name {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  .navbar .team_name .logo {
+    margin-top: 0.5vh;
+    margin-right: 1vw;
+    height: auto;
+    width: auto;
+    max-width: 10vw;
+    max-height: 10vh;
+  }
+  .navbar .team_name .team_name_word {
+    margin-top: 3vh;
+    line-height: 0.40;
+  }
+  .navbar .team_name .team_name_word .name {
+    font-size: 7.5vw;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    background-color: Transparent;
+  }
+  .navbar .team_name .team_name_word .name:hover {
+    color: #50FAA8;
+  }
+  .navbar .team_name .team_name_word .subname {
+    font-size: 4vw;
+    color: white;
+    font-family: Futura Light;
+    font-weight: lighter;
+    margin-left: 0.15vw;
+    border: none;
+    background-color: Transparent;
+  }
+  .navbar .team_name .team_name_word .subname:hover {
+    color: #50FAA8;
+  }
+  /*======================================================================================*/
+  /*sidebar*/
+  .menu-btn {
+    z-index: 7;
+    position: fixed;
+    top: 5vh;
+    right: -7vw;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger::before {
+    -webkit-transform: translateY(-16px);
+            transform: translateY(-16px);
+  }
+  .menu-btn__burger::after {
+    -webkit-transform: translateY(16px);
+            transform: translateY(16px);
+  }
+  /* ANIMATION */
+  .menu-btn.open .menu-btn__burger {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .menu-btn.open .menu-btn__burger::before {
+    -webkit-transform: rotate(45deg) translate(35px, -35px);
+            transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menu-btn.open .menu-btn__burger::after {
+    -webkit-transform: rotate(-45deg) translate(35px, 35px);
+            transform: rotate(-45deg) translate(35px, 35px);
+  }
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    right: 0;
+    z-index: 3;
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.98);
+    border-left: 1px solid white;
+  }
+  .sidebar .closebtn {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    right: 0;
+    position: absolute;
+    margin-right: 2vw;
+    margin-top: 1.8vw;
+  }
+  .sidebar .closebtn:hover {
+    color: #50FAA8;
+    text-decoration: none;
+  }
+  .sidebar .option_menu {
+    text-align: right;
+    margin-top: 20vh;
+    margin-right: 2vw;
+  }
+  .sidebar .option_menu li {
+    color: white;
+    font-size: 8vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 2;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .sidebar .option_menu a {
+    color: white;
+  }
+  .sidebar .option_menu a:hover {
+    color: #50FAA8;
+    text-decoration: none;
+  }
+  /*======================================================================================*/
+  /*body*/
+  section {
+    min-height: 100vh;
+    height: 100%;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+    background: #E8E8E8;
+  }
+  /*======================================================================================*/
+  /*Content*/
+  .content {
+    padding-top: 17vh;
+    padding-bottom: 4vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-family: "Montserrat", sans-serif;
+  }
+  .content .container_box {
+    background: #E8E8E8;
+    width: 100%;
+    height: auto;
+    border-left: 0px solid black;
+    color: black;
+    padding: 0% 2% 0% 2%;
+    text-align: left;
+  }
+  .content .container_box h1 {
+    letter-spacing: 5px;
+  }
+  .content .container_box h2 {
+    letter-spacing: 3px;
+    text-decoration: underline;
+  }
+  .content .container_box h3 {
+    letter-spacing: 1px;
+  }
+  .content .container_box hr {
+    border: 0.2rem solid black;
+  }
+  .content .container_box table {
+    border-collapse: collapse;
+  }
+  .content .container_box .value {
+    padding-left: 1vw;
+  }
+  .content .container_box .value:before {
+    content: ": ";
+  }
+  .content .container_box .agenda_title {
+    height: auto;
+    width: 100%;
+    border-left: 5px solid #59647a;
+    padding-left: 5px;
+    font-weight: bold;
+  }
+  .content .container_box p {
+    text-align: justify;
+  }
+}
+/*# sourceMappingURL=Responsive_Diaries_Mobile.css.map */
