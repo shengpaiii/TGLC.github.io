@@ -698,9 +698,6 @@ $hover_color: #50FAA8;
 
     .content_page_4
     {
-        //background: #E2EFD3;
-        //background: #ffc0a9;
-        background: #46616a;
         width: 100%;
         height: 100vh;
         font-family: Futura Light;
@@ -770,30 +767,6 @@ $hover_color: #50FAA8;
                 {
                     background-position: 0px -35px;
                 }
-            }
-
-            .item_1
-            {
-                width: 100%;
-                height: 100%;
-                background:url("../img/2.jpg");
-                background-size: cover;
-                background-attachment: fixed;
-            }
-
-            .item_2
-            {
-                width: 100%;
-                height: 100%;
-                background:url("../img/1.jpg");
-                background-size: cover;
-                background-attachment: fixed;
-            }
-
-            &>a:nth-of-type(1)
-            {
-                grid-column: 1/2;
-                grid-row: 1/4;
             }
         }
 
